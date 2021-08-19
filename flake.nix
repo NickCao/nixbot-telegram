@@ -16,6 +16,7 @@
         packages.nixbot-telegram = (hp.extend (final: prev: {
           telegram-raw-api = doJailbreak (unmarkBroken prev.telegram-raw-api);
           telegram-types = unmarkBroken prev.telegram-types;
+          type-fun = unmarkBroken prev.type-fun;
         })).callCabal2nix "nixbot-telegram" (substituteAllFiles {
           timeout = "${coreutils}/bin/timeout";
           name = "source";
